@@ -1,70 +1,72 @@
-.statusButtons {
-    padding-top: 5px;
+.statusButtons button:not(:last-child){
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .burn {
-    background-color: orange;
+    background-color: darkorange;
     width: 100px;
     height: 50px;
+    border-radius: 15%;
+    
 }
 
 .regen {
     background-color: green;
- 
     width: 100px;
     height: 50px;
+    border-radius: 15%;
 }
 
 .stagger {
     background-color: yellow;
-
     width: 100px;
     height: 50px;
+    border-radius: 15%;
 }
 
 .focus {
     background-color: lightpink;
-
     width: 100px;
     height: 50px;
+    border-radius: 15%;
 }
 
 .burnPressed {
-    background-color: darkorange;
-    border: solid 5px;
+    background-color: red;
+    border: solid 2px;
     width: 100px;
     height: 50px;
- 
-  
-
+    border-radius: 15%;
+    box-shadow: 1px 1px 0px 1px black;
 }
 
 .regenPressed {
     background-color: darkgreen;
-    border: solid 5px;
+    border: solid 2px;
     width: 100px;
     height: 50px;
+    border-radius: 15%;
+    box-shadow: 1px 1px 0px 1px black;
 }
 
 .staggerPressed {
     background-color: gold;
-    border: solid 5px;
+    border: solid 2px;
     width: 100px;
     height: 50px;
+    border-radius: 15%;
+    box-shadow: 1px 1px 0px 1px black;
 }
 
 .focusPressed {
     background-color: rosybrown;
-    border: solid 5px;
+    border: solid 2px;
     width: 100px;
     height: 50px;
+    border-radius: 15%;
+    box-shadow: 1px 1px 0px 1px black;
 
 }
 
-.centered {
-    display: flex;
-    align-items: center;
-    justify-content: 'center';
-    max-width: 100%;
-    margin: 0 auto;
-  }

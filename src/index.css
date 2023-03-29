@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color : darkslateblue;
+  background-color : teal;
+
 
 }
 
@@ -14,10 +15,4 @@ code {
     monospace;
 }
 
-.compStyle {
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  justify-content: 'center';
-  margin: 0 auto;
-}
+

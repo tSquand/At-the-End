@@ -48,22 +48,26 @@ const App = () => {
   return (
     <div>
       <h1 className='centered'>At the End</h1>
+      <h2 className='centered'>Health</h2>
       <div className='centered'>       
         <HealthBar health={health} maxHealth={maxHealth}/> 
-        <div style ={{ display: 'flex', flexDirection: 'column' }}>
-          <button onClick={plusHealth}>+</button>
-          <button onClick={minusHealth}>-</button>
+        
+        <div className='PMButtonDiv'>
+          <button className='PMButton' onClick={plusHealth}>+</button>
+          <button className='PMButton' onClick={minusHealth}>-</button>
         </div>
         </div>
         <div className='centered'>
           <button onClick={minusMaxHealth}>-MAX HP</button>
           <button onClick={plusMaxHealth}>+MAX HP</button>           
       </div>
-      <div className='centered' style={{ paddingTop: '10px' }}>       
+      <h2 className='centered'>Madness</h2>
+      <div className='centered'> 
+            
         <MadnessBar madness={madness} maxMadness={maxMadness}/>
-        <div style = {{ display: 'flex', flexDirection: 'column'}}>
-          <button onClick={plusMadness}>+</button>
-          <button onClick={minusMadness}>-</button>
+        <div className='PMButtonDiv'>
+          <button className='PMButton' onClick={plusMadness}>+</button>
+          <button className='PMButton' onClick={minusMadness}>-</button>
         </div>
       </div>
       <div className='centered'>
