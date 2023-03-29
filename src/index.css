@@ -14,8 +14,10 @@ code {
     monospace;
 }
 
-.app {
-  justify-content: center;
+.compStyle {
+  display: flex;
   align-items: center;
   max-width: 100%;
+  justify-content: 'center';
+  margin: 0 auto;
 }

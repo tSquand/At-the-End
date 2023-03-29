@@ -2,6 +2,7 @@ import React, {useState, useCallback, useEffect} from 'react';
 import HealthBar from './components/healthbar';
 import MadnessBar from './components/madness';
 import StatusTracker from './components/status';
+import './styles.css';
 
 const App = () => {
   const [health, setHealth] = useState(40);
@@ -45,26 +46,27 @@ const App = () => {
   }, [madness, maxMadness]);
 
   return (
-    <div className="app">
-      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>       
+    <div>
+      <h1 className='centered'>At the End</h1>
+      <div className='centered'>       
         <HealthBar health={health} maxHealth={maxHealth}/> 
         <div style ={{ display: 'flex', flexDirection: 'column' }}>
           <button onClick={plusHealth}>+</button>
           <button onClick={minusHealth}>-</button>
         </div>
         </div>
-        <div style={{ display: 'flex', alignitems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>
+        <div className='centered'>
           <button onClick={minusMaxHealth}>-MAX HP</button>
           <button onClick={plusMaxHealth}>+MAX HP</button>           
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto', paddingTop: '10px' }}>       
+      <div className='centered' style={{ paddingTop: '10px' }}>       
         <MadnessBar madness={madness} maxMadness={maxMadness}/>
         <div style = {{ display: 'flex', flexDirection: 'column'}}>
           <button onClick={plusMadness}>+</button>
           <button onClick={minusMadness}>-</button>
         </div>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>
+      <div className='centered'>
         <StatusTracker/>
       </div>
     </div>
