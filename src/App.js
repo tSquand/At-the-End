@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import HealthBar from './components/healthbar';
 import MadnessBar from './components/madness';
+import StatusTracker from './components/status';
 
 const App = () => {
   const [health, setHealth] = useState(40);
@@ -20,7 +21,7 @@ const App = () => {
 
   const plusMaxHealth = useCallback(() => {
     setMaxHealth((prevMaxHealth) => Math.max(prevMaxHealth + 1, 0));
-  })
+  }, []);
 
   const minusMadness = useCallback(() => {
     setMadness((prevMadness) => Math.max(prevMadness -1, 0));
@@ -44,6 +45,9 @@ const App = () => {
         <MadnessBar madness={madness} maxMadness={maxMadness}/>
         <button onClick={minusMadness}>-</button>
         <button onClick={plusMadness}>+</button>
+      </div>
+      <div>
+        <StatusTracker/>
       </div>
     </div>
   );

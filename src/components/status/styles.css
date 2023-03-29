@@ -1,0 +1,64 @@
+.statusButtons {
+    width: 300px;
+    margin: 0 auto; 
+    padding-top: 5px;
+}
+
+.burn {
+    background-color: orange;
+    width: 100px;
+    height: 50px;
+}
+
+.regen {
+    background-color: green;
+ 
+    width: 100px;
+    height: 50px;
+}
+
+.stagger {
+    background-color: yellow;
+
+    width: 100px;
+    height: 50px;
+}
+
+.focus {
+    background-color: lightpink;
+
+    width: 100px;
+    height: 50px;
+}
+
+.burnPressed {
+    background-color: orange;
+    border: solid 5px;
+    width: 100px;
+    height: 50px;
+ 
+  
+
+}
+
+.regenPressed {
+    background-color: green;
+    border: solid 5px;
+    width: 100px;
+    height: 50px;
+}
+
+.staggerPressed {
+    background-color: yellow;
+    border: solid 5px;
+    width: 100px;
+    height: 50px;
+}
+
+.focusPressed {
+    background-color: lightpink;
+    border: solid 5px;
+    width: 100px;
+    height: 50px;
+
+}
