@@ -1,6 +1,6 @@
 .statusButtons {
-    width: 300px;
-    margin: 0 auto; 
+    
+
     padding-top: 5px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .burnPressed {
-    background-color: orange;
+    background-color: darkorange;
     border: solid 5px;
     width: 100px;
     height: 50px;
@@ -42,21 +42,21 @@
 }
 
 .regenPressed {
-    background-color: green;
+    background-color: darkgreen;
     border: solid 5px;
     width: 100px;
     height: 50px;
 }
 
 .staggerPressed {
-    background-color: yellow;
+    background-color: gold;
     border: solid 5px;
     width: 100px;
     height: 50px;
 }
 
 .focusPressed {
-    background-color: lightpink;
+    background-color: rosybrown;
     border: solid 5px;
     width: 100px;
     height: 50px;

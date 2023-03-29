@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import HealthBar from './components/healthbar';
 import MadnessBar from './components/madness';
 import StatusTracker from './components/status';
@@ -9,9 +9,10 @@ const App = () => {
   const [madness, setMadness] = useState(0);
   const [maxMadness] = useState(10);
 
+  // Don't believe useCallbacks are necessary if not being passed to a component
   const minusHealth = useCallback(() => {
     setHealth((prevHealth) => Math.max(prevHealth - 1, 0));
-  }, []);
+  }, [health, maxHealth]);
 
   const plusHealth = useCallback(() => {
     if (health < maxHealth) {
@@ -22,6 +23,16 @@ const App = () => {
   const plusMaxHealth = useCallback(() => {
     setMaxHealth((prevMaxHealth) => Math.max(prevMaxHealth + 1, 0));
   }, []);
+
+  const minusMaxHealth = useCallback(() => {  
+    setMaxHealth((prevMaxHealth) => Math.min(prevMaxHealth - 1, maxHealth)); 
+  }, []);
+
+  useEffect(() => { // if health is ever > max health will set health to the value of max health
+    if(health > maxHealth) {
+      setHealth(maxHealth);
+    }
+  }, [health, maxHealth]);
 
   const minusMadness = useCallback(() => {
     setMadness((prevMadness) => Math.max(prevMadness -1, 0));
@@ -34,19 +45,26 @@ const App = () => {
   }, [madness, maxMadness]);
 
   return (
-    <div>
-      <div style={{ display: 'flex', alignItems: 'center', width: '300px', margin: '0 auto' }}>
-        <HealthBar health={health} maxHealth={maxHealth}/>
-        <button onClick={minusHealth}>-</button> 
-        <button onClick={plusHealth}>+</button> 
-        <button onClick={plusMaxHealth}>+MAX</button> 
+    <div className="app">
+      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>       
+        <HealthBar health={health} maxHealth={maxHealth}/> 
+        <div style ={{ display: 'flex', flexDirection: 'column' }}>
+          <button onClick={plusHealth}>+</button>
+          <button onClick={minusHealth}>-</button>
+        </div>
+        </div>
+        <div style={{ display: 'flex', alignitems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>
+          <button onClick={minusMaxHealth}>-MAX HP</button>
+          <button onClick={plusMaxHealth}>+MAX HP</button>           
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', width: '300px', margin: '0 auto' }}>
+      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto', paddingTop: '10px' }}>       
         <MadnessBar madness={madness} maxMadness={maxMadness}/>
-        <button onClick={minusMadness}>-</button>
-        <button onClick={plusMadness}>+</button>
+        <div style = {{ display: 'flex', flexDirection: 'column'}}>
+          <button onClick={plusMadness}>+</button>
+          <button onClick={minusMadness}>-</button>
+        </div>
       </div>
-      <div>
+      <div style={{ display: 'flex', alignItems: 'center', maxWidth: '100%', justifyContent: 'center', margin: '0 auto' }}>
         <StatusTracker/>
       </div>
     </div>
