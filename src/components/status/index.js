@@ -10,8 +10,8 @@ const StatusTracker = () => {
     });
 
     const handleButtonClick = (button) => {
-        press((prevState) => ({ ...prevState, [button]: !prevState[button]}));
-        
+        press((prevState) => ({ ...prevState, [button]: !prevState[button]}));     
+          
     }
 
 

@@ -10,10 +10,10 @@ const App = () => {
   const [madness, setMadness] = useState(0);
   const [maxMadness] = useState(10);
 
-  // Don't believe useCallbacks are necessary if not being passed to a component
+
   const minusHealth = useCallback(() => {
     setHealth((prevHealth) => Math.max(prevHealth - 1, 0));
-  }, [health, maxHealth]);
+  }, [setHealth]);
 
   const plusHealth = useCallback(() => {
     if (health < maxHealth) {
@@ -22,22 +22,22 @@ const App = () => {
   }, [health, maxHealth]);
 
   const plusMaxHealth = useCallback(() => {
-    setMaxHealth((prevMaxHealth) => Math.max(prevMaxHealth + 1, 0));
+    setMaxHealth((prevMaxHealth) => Math.min(prevMaxHealth + 1, 100));
   }, []);
 
   const minusMaxHealth = useCallback(() => {  
-    setMaxHealth((prevMaxHealth) => Math.min(prevMaxHealth - 1, maxHealth)); 
+    setMaxHealth((prevMaxHealth) => Math.max(prevMaxHealth - 1, 0)); 
   }, []);
 
   useEffect(() => { // if health is ever > max health will set health to the value of max health
     if(health > maxHealth) {
       setHealth(maxHealth);
     }
-  }, [health, maxHealth]);
+  }, [health, maxHealth, setHealth]);
 
   const minusMadness = useCallback(() => {
     setMadness((prevMadness) => Math.max(prevMadness -1, 0));
-  }, []);
+  }, [setMadness]);
 
   const plusMadness = useCallback(() => {
     if (madness < maxMadness) {
